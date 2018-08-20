@@ -1,0 +1,14 @@
+<form #workerForm=ngForm (ngSubmit) = 'saveWorker(workerForm.value)'>   
+    
+            search Movie : <select name = 'movieCateg' required ngModel #meName=ngModel >
+                                <option value=''>--select--</option>
+                             <option *ngFor = 'let svs of SearchMovie'>{{svs}}</option>
+                            </select>
+                            <span *ngIf= '(meName.dirty || meName.touched) && meName.invalid'>
+                                <span *ngIf= 'meName.errors.required'>
+                                 MovieName is required!
+                                </span>
+                            </span><br/>
+               <input type = 'submit' value = 'Search Movie'/>
+    </form>
+    
